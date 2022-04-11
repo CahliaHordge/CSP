@@ -1,4 +1,5 @@
 import tkinter as tk 
+from message_encode import Message
 
 #Defined Functions 
 
@@ -7,8 +8,8 @@ def on_submit():
     message = message.lower()
     if message == '':
         return
-    print(message)
-
+    my_message = Message(message, 3)
+    encoded_var.set(my_message.encrypted_message)
 
 
 
