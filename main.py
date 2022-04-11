@@ -1,5 +1,17 @@
 import tkinter as tk 
 
+#Defined Functions 
+
+def on_submit():
+    message = messagae_var.get()
+    message = message.lower()
+    if message == '':
+        return
+    print(message)
+
+
+
+
 root = tk.Tk()
 root.title("Caesar Cipher")
 root.geometry('600x600')
@@ -34,7 +46,8 @@ encoded_input.grid(row=1, column=1, sticky= (tk.N,tk.E,tk.S, tk.W), padx= 5)
 
 # 3rd row
 submit_btn = tk.Button(root, text = 'Encode Text')
-submit_btn.gride(row= 2, column = 1, sticky = (tk.E), padx = 10, pady = 10)
+submit_btn.grid(row= 2, column = 1, sticky = (tk.E), padx = 10, pady = 10)
+submit_btn.configure(command=on_submit)
 
 
 root.mainloop()
